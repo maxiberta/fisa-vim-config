@@ -25,7 +25,7 @@ Bundle 'gmarik/vundle'
 " Bundles from GitHub repos:
 
 " Python and PHP Debugger
-Bundle 'fisadev/vim-debug.vim'
+"Bundle 'fisadev/vim-debug.vim'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Code commenter
@@ -142,7 +142,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 imap <C-J> <C-X><C-O>
 
 " show pending tasks list
-map <F2> :TaskList<CR>
+" map <F2> :TaskList<CR>
 
 " removes trailing spaces of python files
 " (and restores cursor position)
@@ -167,7 +167,7 @@ let OmniCpp_NamespaceSearch = 2
 let OmniCpp_DisplayMode = 1
 " 0 = don't show scope in abbreviation
 " 1 = show scope in abbreviation and remove the last column
-let OmniCpp_ShowScopeInAbbr = 0
+let OmniCpp_ShowScopeInAbbr = 1
 " This option allows to display the prototype of a function in the abbreviation part of the popup menu.
 " 0 = don't display prototype in abbreviation
 " 1 = display prototype in abbreviation
@@ -254,14 +254,14 @@ let g:tabman_toggle = 'tl'
 let g:tabman_focus  = 'tf'
 
 " use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|screen-256'
+"if &term =~? 'mlterm\|xterm\|screen-256'
 	let &t_Co = 256
-    " color
-    colorscheme fisa
-else
-    " color
-    colorscheme delek
-endif
+"    " color
+"    colorscheme fisa
+"else
+"    " color
+"    colorscheme delek
+"endif
 
 " colors for gvim
 if has('gui_running')
@@ -278,3 +278,21 @@ set wildmode=list:longest
 " to use fancy symbols for powerline, uncomment the following line and use a
 " patched font (more info on the README.rst)
 " let g:Powerline_symbols = 'fancy'
+
+" for things that are particular to this user/computer,
+" you can add commands to a .local_vim file in your home dir
+" and uncommenting the following
+" source ~/.local_vim
+
+" Use the below highlight group when displaying bad whitespace is desired.
+highlight BadWhitespace ctermbg=red guibg=red
+
+" Display tabs at the beginning of a line in Python mode as bad.
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+set vb
+set ruler
+set colorcolumn=80
+set pastetoggle=<F2>
