@@ -239,14 +239,14 @@ let g:flake8_ignore=""
 let g:pyflakes_use_quickfix = 0
 
 " autoclose (
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+"inoremap        (  ()<Left>
+"inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 " autoclose [
-inoremap        [  []<Left>
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+"inoremap        [  []<Left>
+"inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 " autoclose {
-inoremap        {  {}<Left>
-inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+"inoremap        {  {}<Left>
+"inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
 " tabman shortcuts
 let g:tabman_toggle = 'tl'
