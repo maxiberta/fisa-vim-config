@@ -300,6 +300,9 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" removes trailing spaces of python files
+" (and restores cursor position)
+autocmd BufWritePre *.py mark z | %s/ *$//e | 'z
 
 set vb
 set ruler
