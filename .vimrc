@@ -309,3 +309,4 @@ set ruler
 set colorcolumn=80
 set pastetoggle=<F2>
 set background=dark
+set ignorecase
