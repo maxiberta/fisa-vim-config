@@ -51,7 +51,7 @@ Bundle 'fisadev/FixedTaskList.vim'
 " Surround
 Bundle 'tpope/vim-surround'
 " Autoclose
-Bundle 'Townk/vim-autoclose'
+"Bundle 'Townk/vim-autoclose'
 " Indent text object
 Bundle 'michaeljsmith/vim-indent-object'
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
@@ -275,12 +275,12 @@ let g:tabman_focus  = 'tf'
 " use 256 colors when possible
 if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
 	let &t_Co = 256
-"    " color
+    " color
 "    colorscheme fisa
-"else
-"    " color
-"    colorscheme delek
-"endif
+else
+    " color
+    colorscheme delek
+endif
 
 " colors for gvim
 if has('gui_running')
