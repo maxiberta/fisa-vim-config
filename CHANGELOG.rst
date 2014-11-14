@@ -274,3 +274,42 @@ Changelog
   * SnipMate plugin mapping back to the default (``tab``)
   * Replaced AutoComplPop with NeoComplCache, for better and fuzzy completion
   * Removed isort python dependency, because the latest vim-isort includes it
+
+* Version 6.1
+
+  * Updated docs for font patching
+  * Updated setting name of python-mode
+
+* Version 6.2
+
+  * Fixed goto definition mappings (python-mode changed commands)
+
+* Version 6.3
+
+  * Fixed python linter mappings (python-mode changed commands)
+
+* Version 6.4
+
+  * Restored isort pip dependency, due to changes in vim-isort (**new python package dependency: isort**)
+
+* Version 6.5
+
+  * Added dragvisuals plugin and mappings/settings
+  * Persistent undos
+  * Mapping to open NERDTree positioned on the current file
+  * Moved temporary files to internal vim folders
+
+* Version 7.0
+
+  * Added window chooser plugin
+  * Replaced git-gutter with vim-signify
+  * Replaced pyflakes with syntastic
+  * Code polishing (sections, comments)
+
+* Version 7.1
+
+  * Added plugin to paint css color definitions with the actual color
+
+* Version 7.1.1
+
+  * Disable preview window by default, to avoid flicker
