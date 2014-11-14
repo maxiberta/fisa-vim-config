@@ -418,3 +418,8 @@ let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_symbols.branch = '⭠'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
+
+set colorcolumn=80
+map <F2> :setlocal paste!<CR>
+set background=dark
+set ignorecase
