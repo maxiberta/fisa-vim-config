@@ -256,7 +256,7 @@ map <F2> :TaskList<CR>
 
 " Vim-debug ------------------------------
 
-" disable default mappings, have a lot of conflicts with oter plugins
+" disable default mappings, have a lot of conflicts with other plugins
 let g:vim_debug_disable_mappings = 1
 " add some useful mappings
 map <F5> :Dbg over<CR>
@@ -347,7 +347,6 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_fuzzy_completion_start_length = 1
-let g:neocomplcache_auto_completion_start_length = 1
 let g:neocomplcache_auto_completion_start_length = 1
 let g:neocomplcache_manual_completion_start_length = 1
 let g:neocomplcache_min_keyword_length = 1

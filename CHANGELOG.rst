@@ -313,3 +313,12 @@ Changelog
 * Version 7.1.1
 
   * Disable preview window by default, to avoid flicker
+
+* Version 7.1.2
+
+  * Fixed typo (PR #74)
+  * Removed duplicated line (PR #70)
+
+* Version 7.1.3
+
+  * Fixed typo (PR #75)
