@@ -49,7 +49,7 @@ Bundle 'motemen/git-vim'
 " Tab list panel
 Bundle 'kien/tabman.vim'
 " Airline
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
 " Consoles as buffers
@@ -401,9 +401,9 @@ let g:choosewin_overlay_enable = 1
 
 " Airline ------------------------------
 
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'bubblegum'
-let g:airline#extensions#whitespace#enabled = 0
+"let g:airline_powerline_fonts = 0
+"let g:airline_theme = 'bubblegum'
+"let g:airline#extensions#whitespace#enabled = 0
 
 " to use fancy symbols for airline, uncomment the following lines and use a
 " patched font (more info on the README.rst)
@@ -422,3 +422,12 @@ let g:airline#extensions#whitespace#enabled = 0
 map <F2> :setlocal paste!<CR>
 set background=dark
 set ignorecase
+
+" Powerline ----------------------------------
+set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+" These lines setup the environment to show graphics and colors correctly.
+set nocompatible
+set t_Co=256
