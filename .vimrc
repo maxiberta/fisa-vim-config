@@ -49,7 +49,8 @@ Bundle 'motemen/git-vim'
 " Tab list panel
 Bundle 'kien/tabman.vim'
 " Airline
-"Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
 " Consoles as buffers
@@ -64,7 +65,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'michaeljsmith/vim-indent-object'
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
 " operators, highlighting, run and ipdb breakpoints)
-"Bundle 'klen/python-mode'
+Bundle 'klen/python-mode'
 " Better autocompletion
 Bundle 'Shougo/neocomplcache.vim'
 " Snippets manager (SnipMate), dependencies, and snippets repo
@@ -81,7 +82,7 @@ Bundle 'fisadev/dragvisuals.vim'
 " Window chooser
 Bundle 't9md/vim-choosewin'
 " Python and other languages code checker
-"Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 " Paint css colors with the real color
 Bundle 'lilydjwg/colorizer'
 " Relative numbering of lines (0 is the current line)
@@ -126,9 +127,9 @@ set softtabstop=4
 set shiftwidth=4
 
 " tab length exceptions on some file types
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " always show status bar
 set ls=2
@@ -188,7 +189,7 @@ nmap ,wR :RecurGrep <cword><CR>
 nmap ,wr :RecurGrepFast <cword><CR>
 
 " use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
+if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
 	let &t_Co = 256
     colorscheme fisa
 else
@@ -299,7 +300,7 @@ nmap ,wc :call CtrlPWithSearchText(expand('<cword>'), 'CmdPalette')<CR>
 let g:ctrlp_working_path_mode = 0
 " ignore these files and folders on file finder
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules)$',
   \ 'file': '\.pyc$\|\.pyo$',
   \ }
 
@@ -401,9 +402,9 @@ let g:choosewin_overlay_enable = 1
 
 " Airline ------------------------------
 
-"let g:airline_powerline_fonts = 0
-"let g:airline_theme = 'bubblegum'
-"let g:airline#extensions#whitespace#enabled = 0
+let g:airline_powerline_fonts = 0
+let g:airline_theme = 'bubblegum'
+let g:airline#extensions#whitespace#enabled = 0
 
 " to use fancy symbols for airline, uncomment the following lines and use a
 " patched font (more info on the README.rst)
@@ -417,17 +418,3 @@ let g:choosewin_overlay_enable = 1
 "let g:airline_symbols.branch = '⭠'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
-
-"set colorcolumn=80
-map <F2> :setlocal paste!<CR>
-set background=dark
-set ignorecase
-
-" Powerline ----------------------------------
-set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-" These lines setup the environment to show graphics and colors correctly.
-set nocompatible
-set t_Co=256
