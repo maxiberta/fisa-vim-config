@@ -403,13 +403,46 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " to use fancy symbols for airline, uncomment the following lines and use a
 " patched font (more info on the README.rst)
-"if !exists('g:airline_symbols')
-"   let g:airline_symbols = {}
-"endif
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_symbols.branch = '⭠'
-"let g:airline_symbols.readonly = '⭤'
-"let g:airline_symbols.linenr = '⭡'
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
+"set colorcolumn=80
+map <F2> :setlocal paste!<CR>
+set background=dark
+set ignorecase
+
+" Powerline ----------------------------------
+set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+" These lines setup the environment to show graphics and colors correctly.
+set nocompatible
+set t_Co=256
+
+" Launchpad Python coding style
+" autocmd BufNewFile,BufRead *.py set tw=78 ts=4 sts=4 sw=4 et
+
+" To make trailing whitespace visible:
+set list
+set listchars=tab:>.,trail:-
+
+" To make long lines show up:
+autocmd FileType python match Error /\%>79v.\+/
+autocmd FileType javascript match Error /\%>79v.\+/
+
+autocmd BufWritePre *.py,*.sql :%s/\s\+$//e
+
+" Uncomment the following to have Vim jump to the last position when
+" " reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
