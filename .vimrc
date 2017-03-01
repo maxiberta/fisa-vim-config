@@ -130,7 +130,7 @@ endif
 " You can edit them as you wish
 
 " relative numbers
-set relativenumbers
+set relativenumber
 
 " no vi-compatible
 set nocompatible
