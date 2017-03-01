@@ -129,6 +129,9 @@ endif
 " Vim settings and mappings
 " You can edit them as you wish
 
+" relative numbers
+set relativenumber
+
 " no vi-compatible
 set nocompatible
 
